@@ -6,91 +6,117 @@
     text-decoration: none;
 
 }
+
 html{
     height: 100%;
-    min-height: 100%;
 }
-body{
-    font-size: 100%;
-    background:  #f1f2f3 ;
+
+body {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
+    font-family: Merriweather, sans-serif;
+    font-size: 100%;
+    background:  #f1f2f3 ;
 }
+
 
 /*cabecalho*/
 .cabecalho{
-    display: block;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 30px;
     background: fixed #C9DCEC;
-    border: #000000 1px;
-    z-index: 3;
+    border-bottom: #000000 0.7px solid;
+    padding: 20px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .titulo{
-    display: flex;
-    justify-content: center;
+    display: block;
     font-size: 55px;
-    font-family: Merriweather;
 }
+
 .subtitulo{
-    display: flex;
-    justify-content: center;
+    display: block;
     font-size: 15px;
-    font-family: Merriweather;
 }
 
-.conteudo{
-    margin-bottom: 48px;
-    border: 0.4px solid #000000;
-   
+
+/*conteudo*/
+
+.principal {
+    display: flex;
+    flex-grow: 1;
 }
 
-/*barra de menu*/
-nav{
-    z-index: 2;
+/*navegacao*/
+.navegacao {
+    width: 172px;
+    background-color:#C9DCEC;
+    border: #000000 0.7px solid;
+    flex-shrink: 0;
+    
 }
-nav ul{
+
+ul{
+    list-style: none;
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 240px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color:  #C9DCEC;
 }
 
-nav ul li{
-    list-style: none;
-}
-
-nav ul li a{
+ul li a{
+    margin-top: 25px;
     display: block;
-    font-family: Merriweather;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: 300;
     color: #000000;
-    position: relative;
-    padding: 25px 0 25px 25px;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
-nav ul li a:hover{
+
+ul li a:hover{
     color: rgb(46, 159, 225);
 }
-nav ul li a:hover:before{
+
+ul li a:hover:before{
     width: 95%;
+}
+
+.navegacao ul li a::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 15px;
+    background-color: rgb(38, 135, 191);
+    transition: width 0.3s ease-in-out;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.navegacao ul li a:hover::before,
+.navegacao ul li.ativo a::before { 
+    width: 5px;
+}
+
+/*corpo*/
+.corpo{
+    flex-grow: 1;
+    padding: 20px;
 }
 
 /*rodape*/
 .rodape{
-    padding: 50px;
-    border: 0.7px solid #000000;
-    margin-top: auto;
+    padding: 20px;
     background: #C9DCEC;
-    z-index: 1;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 20px;
+    border-top: 0.7px solid #000000;
+}
 
+.conteudo-rodape p{
+    margin: 5px 0;
+    display: block;
+    color: #555;
+    font-size: 14px;
 }
