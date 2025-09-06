@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <meta name="description" content="BookStan - Cadastro e Avaliações de Leitura">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<header class="cabecalho">
+    <div>
+        <a class="titulo">BookStan</a>
+        <a class="subtitulo">Cadastro e Avaliações de Leitura</a>
+    </div>
+</header>
+<body>
+    <main>
+         <nav class="navegacao"></div>
+            <ul>
+                <li class="ativo"><a>Página Inicial</a></li>
+                <li><a>Leituras Atuais</a></li>
+                <li><a>Últimas Leituras</a></li>
+                <li><a>Leituras Desejadas</a></li>
+                <li><a>Avaliações</a></li>
+                
+            </ul>
+        </nav>
+        <form>
+            <fieldset>
+                <input id="imagem" type="file" accept="image/png, image/jpeg"/><br><br>
+                <legend>Dados do Livro</legend>
+                <label>Titulo:</label>
+                <input id="titulo-livro" type="text" />
+                <br>
+                <label>Autor</label>
+                <input id="autor-livro" type="text"/>
+                <br>
+                <label>Quantidade de Páginas</label>
+                <input id="paginas-livro" type="number"/>
+                <br>
+                Gênero:
+                <br>
+                <select name="lista-genero">
+                    <option value="1">Romance</option>
+                    <option value="2">Terror</option>
+                    <option value="3">Comédia</option>
+                    <option value="4">Fantasia</option>
+                    <option value="5">Ficção</option>
+                </select>
+            </fieldset>
+            <input type="submit" value="Enviar"/>
+        </form>
+    </main>
+   
+</body>
+
+<footer class="rodapeLivro">
+        <div class="conteudo-rodape">
+            <p>Trabalho</p>
+            <p>Tópicos especiais e Desenvolvimento de Sistemas I</p>
+            <p>Realizado por Giovanna Salvador e Emilly Rodrigues</p>
+            <p>&copy; 2024 BookStan. Todos os direitos reservados.</p>
+        </div>
+</footer>
+
+</html>

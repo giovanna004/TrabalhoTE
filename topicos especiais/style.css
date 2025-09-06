@@ -21,6 +21,8 @@ body {
 }
 
 
+
+
 /*cabecalho*/
 .cabecalho{
     background: fixed #C9DCEC;
@@ -47,7 +49,22 @@ body {
     display: flex;
     flex-grow: 1;
 }
-
+.acrescentaLivro{
+    display: grid;
+    margin-top: 20%;
+    background: #b8b7b7;
+    height: 150px;
+    width: 110px;
+}
+.adiciona{
+    height: 100px;
+    width: 100px;
+    margin: 19px 5px;
+    transition: opacity 0.2s ease;
+}
+.adiciona:hover{
+    opacity: 0.5;
+}
 /*navegacao*/
 .navegacao {
     width: 175px;
@@ -92,10 +109,25 @@ ul li a:hover:before{
     margin-right: 5px;
     vertical-align: middle;
 }
-
+.navegacao{
+    position: absolute;
+}
 .navegacao ul li a:hover::before,
 .navegacao ul li.ativo a::before { 
     width: 5px;
+}
+
+/* conteudo do livro */
+form  {
+    width: 200px;
+    display: grid;
+    place-items: center;
+    position:relative;
+    z-index: 1 ;
+    margin-left: 600px;
+}
+legend {
+       text-align: center; 
 }
 
 /*corpo*/
@@ -119,4 +151,14 @@ ul li a:hover:before{
     display: block;
     color: #555;
     font-size: 14px;
+}
+.rodapeLivro{
+    background: #C9DCEC;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    border-top: 0.7px solid #000000;
 }
