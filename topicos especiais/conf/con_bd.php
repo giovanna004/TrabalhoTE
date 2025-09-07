@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @var mysqli $con_bd
+ */
+
 $con_bd = false;
 
 try {
