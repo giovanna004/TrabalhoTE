@@ -32,12 +32,12 @@
             </ul>
         </nav>
         <div class="corpo">
-            <form action="./actions/livros/cadastro.php" method="post">
+            <form enctype="multipart/form-data" action="./actions/livros/cadastro.php" method="post">
                 <fieldset>
                     <label for="imagem" class="upload-label">
                         Escolher Capa
                     </label>
-                    <input id="imagem" class="upload-input" type="file" accept="image/png, image/jpeg"/>
+                    <input id="imagem" name="capa" class="upload-input" type="file" accept="image/png, image/jpeg"/>
 
                     <legend>Dados do Livro</legend>
                     
@@ -54,7 +54,7 @@
                     <select id="lista-genero" name="genero">
                         <option value="0"> - Selecione um gênero - </option>
                         <?php
-                             $sql_generos = "SELECT * FROM tb_lgeneros ORDER BY nome ASC;";
+                             $sql_generos = "SELECT * FROM tb_generos ORDER BY nome ASC;";
 
                              $result = mysqli_query($con_bd, $sql_generos);
 

@@ -15,15 +15,35 @@
         require_once("../../conf/con_bd.php");
 
         if($con_bd !== false){
-            $titulo = mtsqli_real_escape_string($con_bd, $titulo);
-            $autor = mtsqli_real_escape_string($con_bd,$autor);
-            $paginas = mtsqli_real_escape_integer($con_bd,$paginas);
+            $titulo = mysqli_real_escape_string($con_bd, $titulo);
+            $autor = mysqli_real_escape_string($con_bd,$autor);
+            $paginas = mysqli_real_escape_string($con_bd,$paginas);
 
             $sql_insert = "INSERT INTO tb_livros(genero_id,titulo, autor, pagina, genero) VALUES ($genero_id,'$titulo','$autor','$paginas');";
 
             $result = mysqli_query($con_bd, $sql_insert);
 
             if($result === true){
+
+                if(isset($_FILES['capa']) && is_array($_FILES['capa'])){
+
+                    $capa_id = mysqli_insert_id($con_bd);
+
+                    $arr_capa_arquivo = $_FILES['capa'];
+                    if(is_uploaded_file($arr_capa_arquivo['tmp_name'])){
+                        
+                        $ext_file = pathinfo($arr_capa_arquivo['name'], PATHINFO_EXTENSION);
+                        $path_capa = "../../uploads/capas/capa-livro-".$capa_id.".".$ext_file;
+
+                        if(move_uploaded_file($arr_capa_arquivo['tmp_name'],$path_capa)){
+                            $sql_update = "UPDATE tb_livros SET capa='$path_capa' WHERE id=$capa_id;";
+                            $result_update = mysqli_query($con_bd, $sql_update);
+                        }
+
+
+                    }
+
+                }
                 $message =  "Livro cadastrado com sucesso!";
             }else {
                 $error = mysqli_error($con_bd);

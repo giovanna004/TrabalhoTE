@@ -1,5 +1,8 @@
+CREATE database biblioteca;
+
 CREATE TABLE tb_livros(
     id INT unsigned not null PRIMARY KEY AUTO_INCREMENT,
+    capa VARCHAR(255),
     titulo VARCHAR(100) NOT NULL,
     autor VARCHAR(100) NOT NULL,
     pagina INT NOT NULL DEFAULT 0,
@@ -21,13 +24,7 @@ INSERT INTO tb_generos(cod, nome) VALUES
 ('FAB', 'Fábula');
 
 ALTER TABLE tb_livros ADD genero_id int unsigned default null AFTER id,
-ADD CONSTRAINT fk_livro_genero FOREIGN KEY (genero_id) REFENCES tb_generos(id);
-
-INSERT INTO tb_livros(titulo, autor, pagina, genero) VALUES
-('O Senhor dos Anéis', 'J.R.R. Tolkien', 1216, 'Fantasia'),
-('1984', 'George Orwell', 328, 'Distopia'),
-('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 96, 'Fábula'),
-('Dom Quixote', 'Miguel de Cervantes', 992, 'Romance');
+ADD CONSTRAINT fk_livro_genero FOREIGN KEY (genero_id) REFERENCES tb_generos(id);
 
 
 
