@@ -35,9 +35,9 @@
                     if(is_uploaded_file($arr_capa_arquivo['tmp_name'])){
                         
                         $ext_file = pathinfo($arr_capa_arquivo['name'], PATHINFO_EXTENSION);
-                        $path_capa = "uploads/capas/capa-livro-".$capa_id.".".$ext_file;
+                        $path_capa = "../../uploads/capas/capa-livro-".$capa_id.".".$ext_file;
 
-                        if(move_uploaded_file($arr_capa_arquivo['tmp_name'],$path_capa)){
+                        if(move_uploaded_file($arr_capa_arquivo['tmp_name'], $path_capa)) {
                             $sql_update = "UPDATE tb_livros SET capa='$path_capa' WHERE id=$capa_id";
                             $result_update = mysqli_query($con_bd, $sql_update);
                         }
@@ -48,7 +48,7 @@
                 echo  "Livro cadastrado com sucesso!";
             }else {
                 $message = mysqli_error($con_bd);
-                $message "Erro cadastrando livro: " . $error;
+                $message = "Erro cadastrando livro: " . mysqli_error($con_bd);
             }
         } 
     } else{

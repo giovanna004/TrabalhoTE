@@ -31,7 +31,7 @@
             </ul>
         </nav>
         <div class="corpo">
-            <form enctype="multipart/form-data" action="\trabalho\TrabalhoTE-1\topicos especiais\actions\livros\cadastrar.php" method="post">
+            <form enctype="multipart/form-data" action="actions\livros\cadastrar.php" method="post">
                 <fieldset>
                     <legend>Dados do Livro</legend>
                     

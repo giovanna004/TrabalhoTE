@@ -39,16 +39,35 @@
         <div class="corpo">
             <div class="estante">
                 <legend>Minha Estante</legend>
-                <div class="livro">
-                    <?php
 
-                            
-                    ?>
-                    <a href="form-cadastro-livros.php"><img class="adiciona"  src="imagens/adicionar.png" alt="adicionar"></a>
-                </div>
                 <div class="livro">
-                    <img src="uploads/capas/<?= $livro['capa'] ?>" alt=" <?= $livro['titulo'] ?> ">
+                    <a href="form-cadastro-livros.php">
+                        <img class="adiciona" src="imagens/adicionar.png" alt="adicionar">
+                    </a>
                 </div>
+
+                <?php
+                    require_once("conf/con_bd.php");
+
+                    if($con_bd !== false) {
+
+                        $sql = "SELECT titulo, capa FROM tb_livros";
+                        $result = mysqli_query($con_bd, $sql);
+
+                        if($result === true && $result -> num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<div class="livro">';
+                                echo '<img src"' .htmlspecialchars($row['capa']) . '"alt ="' . htmlspecialchars_decode($row['titulo']) . '">';
+                                echo '</div>';
+                            }
+                        }
+
+                    } else {
+                        $message = mysqli_error($con_bd);
+                    }
+
+                ?>
+                
             </div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
