@@ -39,12 +39,15 @@
         <div class="corpo">
             <div class="estante">
                 <legend>Minha Estante</legend>
-                <div class="acrescentaLivro">
+                <div class="livro">
                     <?php
 
                             
                     ?>
                     <a href="form-cadastro-livros.php"><img class="adiciona"  src="imagens/adicionar.png" alt="adicionar"></a>
+                </div>
+                <div class="livro">
+                    <img src="uploads/capas/<?= $livro['capa'] ?>" alt=" <?= $livro['titulo'] ?> ">
                 </div>
             </div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
