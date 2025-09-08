@@ -26,20 +26,19 @@
                 <li><a href="home.php">Página Inicial</a></li>
                 <li class="ativo"><a>Novo Livro</a></li>
                 <li><a>Leituras Atuais</a></li>
-                <li><a>Últimas Leituras</a></li>
                 <li><a>Leituras Desejadas</a></li>
                 <li><a>Avaliações</a></li>
             </ul>
         </nav>
         <div class="corpo">
-            <form enctype="multipart/form-data" action="./actions/livros/cadastro.php" method="post">
+            <form enctype="multipart/form-data" action="\trabalho\TrabalhoTE-1\topicos especiais\actions\livros\cadastrar.php" method="post">
                 <fieldset>
+                    <legend>Dados do Livro</legend>
+                    
                     <label for="imagem" class="upload-label">
                         Escolher Capa
                     </label>
                     <input id="imagem" name="capa" class="upload-input" type="file" accept="image/png, image/jpeg"/>
-
-                    <legend>Dados do Livro</legend>
                     
                     <label for="titulo-livro">Título:</label>
                     <input id="titulo-livro" type="text" name="titulo"/>
@@ -62,8 +61,8 @@
 
                             while ($dados_generos = mysqli_fetch_assoc($result)) {
                                 ?>
-                        <opction value="<?= $dados_generos['id'] ?>">
-                            <?= $dados_generos['cod']." - ".$dados_generos['nome'] ?>
+                        <option value="<?= $dados_generos['id'] ?>">
+                            <?= $dados_generos['nome'] ?>
                         </option>
                                 <?php
                             }

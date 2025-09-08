@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    $titulo = $_POST["titulo-livro"] ?? "";
-    $autor = $_POST["autor-livro"]  ?? "";
-    $paginas = $_POST["paginas-livro"] ?? "";
-    $genero_id = $_POST["lista-genero"] ? intval($_POST['lista-genero']) : 'null';
+    $titulo = $_POST["titulo"] ?? "";
+    $autor = $_POST["autor"]  ?? "";
+    $paginas = $_POST["paginas"] ?? "";
+    $genero_id = isset($_POST["genero"]) ? intval($_POST['genero']) : "NULL";
 
     
 
@@ -20,12 +20,12 @@
             $paginas = mysqli_real_escape_string($con_bd,$paginas);
             
 
-            $sql_insert = "INSERT INTO tb_livros(genero_id,titulo, autor, pagina, genero) VALUES ($genero_id,'$titulo','$autor','$paginas');";
+            $sql_insert = "INSERT INTO tb_livros(genero_id,titulo, autor, pagina) VALUES ($genero_id,'$titulo','$autor','$paginas');";
 
             $result = mysqli_query($con_bd, $sql_insert);
 
             if($result === true){
-
+                $status = "success";
                 if(isset($_FILES['capa']) && is_array($_FILES['capa'])){
 
                     $capa_id = mysqli_insert_id($con_bd);
@@ -57,5 +57,5 @@
 
 $_SESSION['status'] = $status;
 $_SESSION['message'] = $message;
-header("Location: ../../index.php?entidade=livro&view=cadastro");
-?>
+header("Location: ../../home.php?entidade=livro&view=cadastro");
+?>  

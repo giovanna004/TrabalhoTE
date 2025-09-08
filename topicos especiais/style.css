@@ -170,6 +170,14 @@ input[type="submit"]:hover {
     margin-bottom: 30px;
 }
 
+.estante {
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+
+}
+
+
 fieldset {
     border: none;
     padding: 30px 40px;
@@ -181,6 +189,7 @@ fieldset {
     max-width: 450px;
     box-sizing: border-box;
 }
+
 
 legend {
     font-size: 1.8em;

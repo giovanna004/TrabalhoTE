@@ -6,7 +6,6 @@ CREATE TABLE tb_livros(
     titulo VARCHAR(100) NOT NULL,
     autor VARCHAR(100) NOT NULL,
     pagina INT NOT NULL DEFAULT 0,
-    genero VARCHAR(50) NOT NULL
 );
 
 create table tb_generos(

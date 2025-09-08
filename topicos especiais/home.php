@@ -30,18 +30,24 @@
                 <li class="ativo"><a>Página Inicial</a></li>
                 <li><a href="form-cadastro-livros.php">Novo Livro</a></li>
                 <li><a>Leituras Atuais</a></li>
-                <li><a>Últimas Leituras</a></li>
                 <li><a>Leituras Desejadas</a></li>
                 <li><a>Avaliações</a></li>
                 
             </ul>
         </nav>
 
-        <div class="corpo"> 
-            <div class="acrescentaLivro">
-                <a href="form-cadastro-livros.php"><img class="adiciona"  src="imagens/adicionar.png" alt="adicionar"></a>
+        <div class="corpo">
+            <div class="estante">
+                <legend>Minha Estante</legend>
+                <div class="acrescentaLivro">
+                    <?php
+
+                            
+                    ?>
+                    <a href="form-cadastro-livros.php"><img class="adiciona"  src="imagens/adicionar.png" alt="adicionar"></a>
+                </div>
             </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
         </div>
     </main>
