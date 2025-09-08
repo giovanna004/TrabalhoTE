@@ -39,6 +39,8 @@
                         Escolher Capa
                     </label>
                     <input id="imagem" name="capa" class="upload-input" type="file" accept="image/png, image/jpeg"/>
+                    <span id="nome-arquivo" class="nome-arquivo">Nenhum arquivo escolhido.</span>
+
                     
                     <label for="titulo-livro">Título:</label>
                     <input id="titulo-livro" type="text" name="titulo"/>
@@ -82,5 +84,17 @@
             <p>&copy; 2024 BookStan. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script>
+        const inputImagem = document.getElementById('imagem');
+        const nomeArquivoSpan = document.getElementById('nome-arquivo');
+
+        inputImagem.addEventListener('change', () => {
+            if (inputImagem.files.length > 0) {
+                nomeArquivoSpan.textContent = inputImagem.files[0].name;
+            } else {
+                nomeArquivoSpan.textContent = 'Nenhum arquivo escolhido.';
+            }
+        });
+    </script>
 </body>
 </html>
