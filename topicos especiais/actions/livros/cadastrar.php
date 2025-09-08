@@ -18,6 +18,7 @@
             $titulo = mysqli_real_escape_string($con_bd, $titulo);
             $autor = mysqli_real_escape_string($con_bd,$autor);
             $paginas = mysqli_real_escape_string($con_bd,$paginas);
+            
 
             $sql_insert = "INSERT INTO tb_livros(genero_id,titulo, autor, pagina, genero) VALUES ($genero_id,'$titulo','$autor','$paginas');";
 
