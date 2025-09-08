@@ -1,4 +1,4 @@
-CREATE database biblioteca;
+CREATE database tedsi;
 
 CREATE TABLE tb_livros(
     id INT unsigned not null PRIMARY KEY AUTO_INCREMENT,
@@ -7,13 +7,13 @@ CREATE TABLE tb_livros(
     autor VARCHAR(100) NOT NULL,
     pagina INT NOT NULL DEFAULT 0,
     genero VARCHAR(50) NOT NULL
-)
+);
 
 create table tb_generos(
     id int unsigned not null primary key auto_increment,
     cod char(3) not null,
     nome tinytext
-)
+);
 
 INSERT INTO tb_generos(cod, nome) VALUES
 ('ROM', 'Romance'),

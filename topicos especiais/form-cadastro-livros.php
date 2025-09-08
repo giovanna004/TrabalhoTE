@@ -23,7 +23,7 @@
     <main class="principal">
         <nav class="navegacao"></div>
             <ul>
-                <li><a href="home.html">Página Inicial</a></li>
+                <li><a href="home.php">Página Inicial</a></li>
                 <li class="ativo"><a>Novo Livro</a></li>
                 <li><a>Leituras Atuais</a></li>
                 <li><a>Últimas Leituras</a></li>
@@ -50,24 +50,25 @@
                     <label for="paginas-livro">Número de Páginas:</label>
                     <input id="paginas-livro" type="number" name="paginas"/>
                     
+                    
                     <label for="lista-genero">Gênero:</label>
                     <select id="lista-genero" name="genero">
                         <option value="0"> - Selecione um gênero - </option>
                         <?php
-                             $sql_generos = "SELECT * FROM tb_generos ORDER BY nome ASC;";
 
-                             $result = mysqli_query($con_bd, $sql_generos);
+                            $sql_generos = "SELECT * FROM tb_generos ORDER BY nome ASC";
 
-                             while( $dados_generos = mysqli_fetch_assoc($result)){
+                            $result = mysqli_query($con_bd, $sql_generos);
+
+                            while ($dados_generos = mysqli_fetch_assoc($result)) {
                                 ?>
-                                <opction value="<?= $dados_generos['id'] ?>">
-                                    <?= $dados_generos['cod']." - ".$dados_generos['nome']  ?>
-                                </option>
+                        <opction value="<?= $dados_generos['id'] ?>">
+                            <?= $dados_generos['cod']." - ".$dados_generos['nome'] ?>
+                        </option>
                                 <?php
-                             }
+                            }
                         ?>
                     </select>
-                    
                     <input type="submit" value="Enviar"/>
                 </fieldset>
             </form>
