@@ -38,8 +38,6 @@
 
         <div class="corpo">
             <div class="estante">
-                <legend>Minha Estante</legend>
-
                 <div class="livro">
                     <a href="form-cadastro-livros.php">
                         <img class="adiciona" src="imagens/adicionar.png" alt="adicionar">
@@ -54,10 +52,14 @@
                         $sql = "SELECT titulo, capa FROM tb_livros";
                         $result = mysqli_query($con_bd, $sql);
 
-                        if($result === true && $result -> num_rows > 0) {
+                        if($result && $result -> num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
                                 echo '<div class="livro">';
-                                echo '<img src"' .htmlspecialchars($row['capa']) . '"alt ="' . htmlspecialchars_decode($row['titulo']) . '">';
+                                    echo '<img src="uploads/capas/' .htmlspecialchars($row['capa']) . '"alt="' . htmlspecialchars_decode($row['titulo']) . '">';
+                                    echo '<p>' . htmlspecialchars($row['titulo']) . '</p>';
+                                    echo '<a href="form-cadastro-livros.php" class="acao">
+                                            <img class="exclui" src="imagens/excluir.png" alt="excluir">
+                                        </a>';
                                 echo '</div>';
                             }
                         }

@@ -48,6 +48,7 @@ body {
 .corpo{
     flex-grow: 1;
     padding: 20px;
+    
 }
 
 .principal {
@@ -61,7 +62,12 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
+    align-items: center;
+    justify-content: left;
+    margin-left: 200px;
+    justify-items: left;
 }
+
 
 .livro{
     background-color: #fff;
@@ -82,6 +88,32 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
+}
+
+.livro p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.livro .acao {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -15px;
+    right: -25px;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.livro:hover .acao {
+  opacity: 1;
+  transform: translateX(-5px);
 }
 
 .adiciona{
