@@ -26,11 +26,11 @@
                                  id='".$id_livro."'";
              $result = mysqli_query($con_bd, $sql_insert);
              if($result ===true){
-                  $message = "Aluno atualizado com sucesso!!!";
+                  $message = "Livro atualizado com sucesso!!!";
                   $status = "success";
              } else {
                 $error = mysqli_error($con_bd);
-                $message = "Erro cadastrando aluno: " . $error;
+                $message = "Erro atualizando livro: " . $error;
             }
          }
 
