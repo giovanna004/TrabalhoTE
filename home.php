@@ -57,9 +57,10 @@
                                 echo '<div class="livro">';
                                     echo '<img src="uploads/capas/' .htmlspecialchars($row['capa']) . '"alt="' . htmlspecialchars_decode($row['titulo']) . '">';
                                     echo '<p>' . htmlspecialchars($row['titulo']) . '</p>';
-                                    echo '<a href="actions/livros/deletar.php?id='.$row['id'].'" class="acao excluir" onclick="return confirm(\'Tem certeza que deseja excluir este livro?\');">
+                                    echo '<form action="actions\livros\deletar" method="POST">
+                                     <button type="submit" value='.$row['id'].'" class="acao excluir" onclick="return confirm(\'Tem certeza que deseja excluir este livro?\');">
                                             <img src="imagens/excluir.png" alt="excluir">
-                                        </a>';
+                                     </button>';
                                     echo '<a href="visualizar-livro.php?id='.$row['id'].'" class="acao visualizar">Visualizar</a>';
                                     echo '<a href="form-atualiza-livro.php?id='.$row['id'].'" class="acao editar">Editar</a>';
                                 echo '</div>';

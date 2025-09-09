@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    //sanitizar dados
+   
     $titulo = $_POST["titulo"] ?? "";
     $autor = $_POST["autor"]  ?? "";
     $paginas = $_POST["paginas"] ?? "";
