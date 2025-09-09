@@ -57,11 +57,12 @@ body {
     align-items: stretch;
 }
 
+
+
 .estante {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
-    padding: 20px;
     align-items: center;
     justify-content: left;
     margin-left: 200px;
@@ -314,4 +315,8 @@ ul li a:hover:before{
     display: block;
     color: #555;
     font-size: 14px;
+}
+
+html, body {
+  overflow-x: hidden;
 }
