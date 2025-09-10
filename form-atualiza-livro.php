@@ -34,7 +34,10 @@
             <?php
                 if(isset($_GET['id'])){
                     $livro_id = mysqli_real_escape_string($con_bd, $_GET['id']);
-                    $sql = "SELECT * FROM tb_livros WHERE id=".$livro_id;
+                    $sql = "SELECT l.*, g.nome AS genero_nome
+                            FROM tb_livros l
+                            JOIN tb_generos g ON g.id = l.genero_id
+                            WHERE l.id =".$livro_id;
                     $result = mysqli_query($con_bd, $sql);
 
                     if(mysqli_num_rows($result) > 0){
@@ -51,7 +54,7 @@
                         Escolher Capa
                     </label>
                     <input id="imagem" name="capa" class="upload-input" value="<?=$dados_livros['capa']?>" type="file" accept="image/png, image/jpeg"/>
-                    <span id="nome-arquivo" class="nome-arquivo">Nenhum arquivo escolhido.</span>
+                    <span id="nome-arquivo" class="nome-arquivo"><?=$dados_livros['capa']?></span>
 
                     
                     <label for="titulo-livro">Título:</label>
@@ -61,12 +64,12 @@
                     <input id="autor-livro" type="text" value="<?=$dados_livros['autor']?>" name="autor"/>
                     
                     <label for="paginas-livro">Número de Páginas:</label>
-                    <input id="paginas-livro" type="number" value="<?=$dados_livros['pagina']?>"  name="paginas"/>
+                    <input id="paginas-livro" type="number" value="<?=$dados_livros['paginas']?>"  name="paginas"/>
                     
                     
                     <label for="lista-genero">Gênero:</label>
                     <select id="lista-genero" name="genero" >
-                        <option value="<?=$dados_livros['genero_id']?>"> - Selecione um gênero - </option>
+                        <option value="<?=$dados_livros['genero_id']?>"><?=$dados_livros['genero_nome']?></option>
                         <?php
                           
                             $sql_generos = "SELECT * FROM tb_generos ORDER BY nome ASC";

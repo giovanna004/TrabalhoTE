@@ -24,7 +24,7 @@
         </div>
     </header>
 
-    <main class="principal">
+    <main class="conteudo">
         <nav class="navegacao"></div>
             <ul>
                 <li class="ativo"><a>Página Inicial</a></li>
@@ -55,13 +55,15 @@
                         if($result && $result -> num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
                                 echo '<div class="livro">';
-                                    echo '<img src="uploads/capas/' .htmlspecialchars($row['capa']) . '"alt="' . htmlspecialchars_decode($row['titulo']) . '">';
+                                    echo '<a href="visualizar-livro.php?id='.$row['id'].'" class="acao visualizar">
+                                        <img src="uploads/capas/' .htmlspecialchars($row['capa']) . '"alt="' . htmlspecialchars_decode($row['titulo']) . '">
+                                    </a>';
                                     echo '<p>' . htmlspecialchars($row['titulo']) . '</p>';
                                     echo '<form action="actions\livros\deletar" method="POST">
-                                     <button type="submit" value='.$row['id'].'" class="acao excluir" onclick="return confirm(\'Tem certeza que deseja excluir este livro?\');">
-                                            <img src="imagens/excluir.png" alt="excluir">
-                                     </button>';
-                                    echo '<a href="visualizar-livro.php?id='.$row['id'].'" class="acao visualizar">Visualizar</a>';
+                                        <button type="submit" value='.$row['id'].'" class="acao excluir" onclick="return confirm(\'Tem certeza que deseja excluir este livro?\');">
+                                                <img src="imagens/excluir.png" alt="excluir">
+                                        </button>
+                                     </form>';
                                     echo '<a href="form-atualiza-livro.php?id='.$row['id'].'" class="acao editar">Editar</a>';
                                 echo '</div>';
                             }

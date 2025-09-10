@@ -2,7 +2,12 @@
 
 *{ box-sizing: border-box; }
 
-html, body { height: 100%; }
+html, body {
+    width: 100%;
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+}
 
 :root {
     --bg: #f1f2f3;
@@ -11,19 +16,21 @@ html, body { height: 100%; }
     --surface: #ffffff;
     --surface-2: #f7f7f8;
     --border: #e5e7eb;
-    --radius: 16px;
-    --shadow: 0 8px 20px rgba(0,0,0,.8);
+}
+
+html {
+    min-width: 1080px;
+    min-height: 900px;
 }
 
 body {
-    min-width: 1080px;
-    min-height: 900px;
     color:var(--text);
     background:  var(--bg);
     margin: 0;
     font-family: Merriweather, sans-serif;
     font-size: 100%;
     line-height: 1.45;
+    
 }
 
 .layout{
@@ -34,7 +41,8 @@ body {
         "header header"
         "menu main"
         "footer footer";
-    min-height: 100vh;
+    min-width: 1080px;
+    min-height: 900px;
 }
 
 
@@ -45,11 +53,11 @@ header.cabecalho{
     border-bottom: 1px solid var(--border);
     padding: 16px 24px;
     display: flex;
-    text-align: center;
+    text-align: left;
     justify-content: space-between;
 }
 
-.cabecalho .logo{
+.cabecalho .titulo{
     display: flex;
     align-items: center;
     gap: 12px;
@@ -57,7 +65,7 @@ header.cabecalho{
     font-size: 20px;
 }
 
-.subtitulo{
+.cabecalho .subtitulo{
     display: block;
     font-size: 12px;
 }
@@ -66,21 +74,24 @@ header.cabecalho{
 /*conteudo*/
 main.conteudo {
     grid-area: main;
-    padding: 24px;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+
 }
 
 .corpo{
+    grid-area: main;
     background: var(--surface);
     border: 1px solid var(--border);
     padding: 20px;
 }
 
 /*rodape*/
-footer .rodape{
+footer.rodape{
     grid-area: footer;
     padding: 20px;
     border-top: 1px solid var(--border);
-    background: var(--surface);
+    background: #c9dcec;
     color: var(--muted);
     padding: 14px 20px;
     
@@ -108,6 +119,7 @@ footer .rodape{
 
 
 .livro{
+    position: relative;
     background-color: #fff;
     border: 2px solid #ddd;
     border-radius: 8px;
@@ -115,6 +127,7 @@ footer .rodape{
     text-align: center;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    margin-bottom: 15px;
     
 }
 
@@ -130,55 +143,51 @@ footer .rodape{
 
 .livro p {
     margin-top: 5px;
+    margin-bottom: 0;
     font-size: 14px;
     color: #333;
 }
 
+.livro button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.livro form{
+    position: absolute;
+    margin: 0;
+    top: -30px;
+    right: 3.5px;
+}
+
 .livro .acao.excluir {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     position: absolute;
     top: -15px;
     right: -25px;
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 12px;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .livro .acao.editar {
-    height: 50px;
-    width: 50px;
     position: absolute;
-    color: #ff0000;
-    text-decoration: none;
-    padding: 5px 10px;
+    bottom: -30px;
+    color: #c3c3c3;
+    padding: 6px 12px;
     border-radius: 4px;
     font-size: 12px;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.livro .acao.visualizar {
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    color: #ff0000;
     text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 12px;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    left: 35%;
+    transform: translateX(-50%);
 }
-
 
 .livro:hover .acao {
-  opacity: 1;
-  transform: translateX(-5px);
+    opacity: 1;
+    transform: translateX(-5px);
 }
 
 .adicionar-livro{
@@ -190,6 +199,7 @@ footer .rodape{
 
 .adicionar-livro:hover{
     opacity: 0.5;
+    transform: translateX(-5px);
 }
 
 /* formulario */
@@ -351,7 +361,5 @@ nav.navegacao {
 
 .navegacao ul li a:hover::before, .navegacao ul li.ativo a::before { width: 5px;}
 
-html, body {
-  overflow-x: hidden;
-}
+
 

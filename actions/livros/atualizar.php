@@ -5,6 +5,8 @@
     $titulo = $_POST["titulo-livro"] ?? "";
     $autor = $_POST["autor-livro"]  ?? "";
     $paginas = $_POST["paginas-livro"] ?? "";
+    $genero_id = isset($_POST["genero"]) ? intval($_POST['genero']) : "NULL";
+    $capa = $_POST["capa"] ?? "";
 
     $status = "error";
 
@@ -12,16 +14,20 @@
         require_once("../../conf/con_bd.php");
 
          if ($con_bd !== false) {
-             $titulo = mysqli_real_escape_string($con_bd, $nome);
-             $autor  = mysqli_real_escape_string($con_bd, $rga);
-             $paginas = mysqli_real_escape_string($con_bd,$paginas);
+            $titulo = mysqli_real_escape_string($con_bd, $nome);
+            $autor  = mysqli_real_escape_string($con_bd, $rga);
+            $paginas = mysqli_real_escape_string($con_bd,$paginas);
+            $generoVal = $genero_id ? $genero_id : "NULL";
+            $capa = mysqli_real_escape_string($con_bd, $capa);
 
              $sql_insert = "UPDATE 
                                  tb_livros
                              SET 
                                  titulo='$titulo',
                                  autor='$autor',
-                                 paginas='$paginas'
+                                 paginas='$paginas',
+                                 genero_id=$generoVal,
+                                 capa='$capa'
                              WHERE
                                  id='".$id_livro."'";
              $result = mysqli_query($con_bd, $sql_insert);
