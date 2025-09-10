@@ -24,7 +24,7 @@
         <nav class="navegacao"></div>
             <ul>
                 <li><a href="home.php">Página Inicial</a></li>
-                <li class="ativo"><a>Novo Livro</a></li>
+                <li><a href="form-cadastro-livros.php">Novo Livro</a></li>
                 <li><a>Leituras Atuais</a></li>
                 <li><a>Leituras Desejadas</a></li>
                 <li><a>Avaliações</a></li>
@@ -46,9 +46,9 @@
                     }
             ?>
 
-            <form enctype="multipart/form-data" action="actions\livros\atualizar.php" method="post">
+            <form class= "editar-imagem"enctype="multipart/form-data" action="actions\livros\atualizar.php" method="post">
                 <fieldset>
-                    <legend>Editar dados do Livro</legend>
+                    <legend>Editar Dados do Livro</legend>
                     
                     <label for="imagem" class="upload-label">
                         Escolher Capa

@@ -202,7 +202,7 @@ footer.rodape{
     transform: translateX(-5px);
 }
 
-/* formulario */
+/* formulario cadastro */
 
 label {
     display: block; 
@@ -212,9 +212,9 @@ label {
     font-size: 0.95em;
 }
 
-input[type="text"],
-input[type="number"],
-select {
+form fieldset input[type="text"],
+form fieldset input[type="number"],
+form fieldset select {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
@@ -222,12 +222,12 @@ select {
     border-radius: 5px;
     font-size: 1em;
     color: #333;
-    background-color: f9f9f9;
+    background-color: #f9f9f9;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-select:focus {
+form fieldset input[type="text"]:focus,
+form fieldset input[type="number"]:focus,
+form fieldset select:focus {
     border-color: #2e9fe1; 
     box-shadow: 0 0 0 3px rgba(46, 159, 225, 0.2); 
     outline: none; 
@@ -295,17 +295,44 @@ input[type="submit"]:hover {
     margin-bottom: 30px;
 }
 
-
 fieldset {
     border: none;
     padding: 30px 40px;
     margin: 0;
-    background-color: ffffff;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 450px;
     box-sizing: border-box;
+}
+
+/* inputs do form visualizar-livro */
+form.visualizar-livro input[readonly] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 0 3px rgba(46, 159, 225, 0.2);
+}
+
+form.visualizar-livro input[readonly]:focus {
+    outline: none;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 0 3px rgba(46, 159, 225, 0.2);;      
+}
+
+form.visualizar-livro img,
+form.editar-imagem img {
+    display: block;
+    margin: 0 auto 30px auto;
+    max-width: 200px;
+    border-radius: 8px;
 }
 
 legend {

@@ -16,7 +16,7 @@
     <header class="cabecalho">
         <div>
             <a class="titulo">BookStan</a>
-            <a class="subtitulo">Visualizar livro</a>
+            <a class="subtitulo">Cadastro e Avaliações de Leitura</a>
         </div>
     </header>
 
@@ -24,7 +24,7 @@
         <nav class="navegacao"></div>
             <ul>
                 <li><a href="home.php">Página Inicial</a></li>
-                <li class="ativo"><a>Novo Livro</a></li>
+                <li><a href="form-cadastro-livros.php">Novo Livro</a></li>
                 <li><a>Leituras Atuais</a></li>
                 <li><a>Leituras Desejadas</a></li>
                 <li><a>Avaliações</a></li>
@@ -46,11 +46,9 @@
                     }
             ?>
 
-            <form enctype="multipart/form-data" action="actions\livros\listar.php" method="post">
+            <form class="visualizar-livro" enctype="multipart/form-data" action="actions\livros\listar.php" method="post">
                 <fieldset>
-                    <legend>Visualizar Livro</legend>
-                    
-                   
+                    <legend><?=$dados_livros['titulo']?></legend>
 
                     <input type="hidden" name="id" value="<?=$dados_livros['id']?>"/>
 
@@ -59,9 +57,6 @@
                                 <img class="capa-visualiza" src="uploads/capas/<?=$dados_livros['capa']?>" alt="Capa do livro" style="max-width: 200px; display: block; margin-top: 10px; ">
                             
                     <?php endif; ?>
-                    
-                    <label for="titulo-livro">Título:</label>
-                    <input id="titulo-livro" type="text" value="<?=$dados_livros['titulo']?>" name="titulo" readonly/>
                     
                     <label for="autor-livro">Autor:</label>
                     <input id="autor-livro" type="text" value="<?=$dados_livros['autor']?>" name="autor" readonly/>
