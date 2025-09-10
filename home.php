@@ -59,8 +59,8 @@
                                         <img src="uploads/capas/' .htmlspecialchars($row['capa']) . '"alt="' . htmlspecialchars_decode($row['titulo']) . '">
                                     </a>';
                                     echo '<p>' . htmlspecialchars($row['titulo']) . '</p>';
-                                    echo '<form action="actions\livros\deletar" method="POST">
-                                        <button type="submit" value='.$row['id'].'" class="acao excluir" onclick="return confirm(\'Tem certeza que deseja excluir este livro?\');">
+                                    echo '<form action="actions/livros/deletar.php" method="POST">
+                                        <button type="submit" name="exclui_livro" value="'.$row['id'].'" class="acao excluir" onclick="return confirm(\'Tem certeza que deseja excluir este livro?\');">
                                                 <img src="imagens/excluir.png" alt="excluir">
                                         </button>
                                      </form>';

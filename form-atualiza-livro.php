@@ -46,16 +46,23 @@
                     }
             ?>
 
-            <form enctype="multipart/form-data" action="actions\livros\cadastrar.php" method="post">
+            <form enctype="multipart/form-data" action="actions\livros\atualizar.php" method="post">
                 <fieldset>
                     <legend>Editar dados do Livro</legend>
                     
                     <label for="imagem" class="upload-label">
                         Escolher Capa
                     </label>
-                    <input id="imagem" name="capa" class="upload-input" value="<?=$dados_livros['capa']?>" type="file" accept="image/png, image/jpeg"/>
-                    <span id="nome-arquivo" class="nome-arquivo"><?=$dados_livros['capa']?></span>
 
+                    <input type="hidden" name="id" value="<?=$dados_livros['id']?>"/>
+
+                    <input id="imagem" name="capa" class="upload-input"  type="file" accept="image/png, image/jpeg"/>
+                    <span id="nome-arquivo" class="nome-arquivo"><?=$dados_livros['capa']?></span>
+                    <?php
+                            if(!empty($dados_livros['capa'])): ?>
+                                <img src="uploads/capas/<?=$dados_livros['capa']?>" alt="Capa do livro" style="max-width: 150px; display: block; margin-top: 10px;">
+                            
+                    <?php endif; ?>
                     
                     <label for="titulo-livro">Título:</label>
                     <input id="titulo-livro" type="text" value="<?=$dados_livros['titulo']?>" name="titulo"/>

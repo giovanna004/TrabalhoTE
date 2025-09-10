@@ -23,20 +23,13 @@
             $generoVal = $genero_id ? $genero_id : "NULL";
            
 
-             $sql_atualiza = "UPDATE 
-                                 tb_livros
-                             SET 
-                                 titulo='$titulo',
-                                 autor='$autor',
-                                 paginas='$paginas',
-                                 genero_id=$generoVal
-                             WHERE
-                                 id='".$id_livro."'";
-             $result = mysqli_query($con_bd, $sql_atualiza);
+             $sql_lista = "SELECT  * FROM tb_livros WHERE id='".$id_livro."'";
+
+             $result = mysqli_query($con_bd, $sql_lista);
+
              if($result ===true){
                 $status = "success";
                
-
                 if(isset($_FILES['capa']) && is_array($_FILES['capa'])){
 
                     $arr_capa_arquivo = $_FILES['capa'];
@@ -54,16 +47,16 @@
                     }
 
                 }
-                 $message = "Livro atualizado com sucesso!!!";
+                 $message = "Livro listado com sucesso!!!";
                 
              } else {
                 $error = mysqli_error($con_bd);
-                $message = "Erro atualizando livro: " . $error;
+                $message = "Erro listando livro: " . $error;
             }
          }
 
     }else{
-        $message = "Para fazer o cadastro é necessário preencher os campos";
+        $message = "ID do livro não fornecido.";
     }
     
 $_SESSION['status'] = $status;

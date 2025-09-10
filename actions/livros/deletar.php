@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-    $id_livro = (int) $_GET['id'];
+    $id_livro = (int) $_POST['exclui_livro'];
    
     $status = "error";
 
@@ -29,5 +29,5 @@ session_start();
 $_SESSION['status'] = $status;
 $_SESSION['message'] = $message;
 
-header("Location: ../../home.php?id=".$id_livro);
+header("Location: ../../home.php");
 ?>
