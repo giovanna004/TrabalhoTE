@@ -95,11 +95,12 @@ footer.rodape{
     background: #c9dcec;
     color: var(--muted);
     padding: 14px 20px;
+    margin-bottom: 0;
     
 }
 
 .conteudo-rodape p{
-    margin: 5px 0;
+    margin-top: 15px;
     display: block;
     color: #555;
     font-size: 14px;
@@ -116,9 +117,6 @@ footer.rodape{
     margin-left: 200px;
     justify-items: left;
 }
-
-
-/*estante de livros*/
 
 .livro, .genero{
     position: relative;
@@ -141,13 +139,6 @@ footer.rodape{
     max-width: 100%;
     height: auto;
     border-radius: 4px;
-}
-
-.livro p {
-    margin-top: 5px;
-    margin-bottom: 0;
-    font-size: 14px;
-    color: #333;
 }
 
 .livro button, .genero button {
@@ -192,27 +183,47 @@ footer.rodape{
     transform: translateX(-5px);
 }
 
-.adicionar-livro{
-    height: 100px;
-    width: 100px;
-    margin: 19px 5px;
-    transition: opacity 0.2s ease;
-}
+/*estante de livros*/
 
-.adicionar-livro:hover{
-    opacity: 0.5;
-    transform: translateX(-5px);
-}
-
-/*estante de generos*/
-
-.genero p {
+.livro p {
     margin-top: 5px;
     margin-bottom: 0;
     font-size: 14px;
-    font-weight: 600;
     color: #333;
 }
+
+.livro .adicionar{
+    margin: 10px 5px;
+    transition: opacity 0.2s ease;
+}
+
+
+/*estante de generos*/
+
+.genero p.nome {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--blu);
+}
+
+.genero a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.genero p .descricao {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #666;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
 
 
 /* formulario cadastro */

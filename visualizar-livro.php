@@ -86,8 +86,7 @@
 
     <footer class="rodape">
         <div class="conteudo-rodape">
-            <p>Trabalho</p>
-            <p>Tópicos especiais e Desenvolvimento de Sistemas I</p>
+            <p>Trabalho de Tópicos especiais e Desenvolvimento de Sistemas I</p>
             <p>Realizado por Giovanna Salvador e Emilly Rodrigues</p>
             <p>&copy; 2024 BookStan. Todos os direitos reservados.</p>
         </div>
