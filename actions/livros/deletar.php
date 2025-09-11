@@ -14,11 +14,11 @@
              $result = mysqli_query($con_bd, $sql_delete);
 
              if($result ===true){
-                $message = "Livro deletado com sucesso!";
+                $message = "Livro deletado com sucesso.";
                 $status = "success";
              } else {
                 $error = mysqli_error($con_bd);
-                $message = "Livro não foi deletado " . $error;
+                $message = "O livro não foi deletado." . $error;
             }
          }
 
@@ -26,9 +26,10 @@
         $message = "Livro não encontrado.";
     }
     
-$_SESSION['status'] = $status;
-$_SESSION['message'] = $message;
+    $_SESSION['status'] = $status;
+    $_SESSION['message'] = $message;
 
-header("Location: ../../home.php");
+    header("Location: ../../home.php");
+    exit();
 
 ?>

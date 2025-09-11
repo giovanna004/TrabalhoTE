@@ -45,7 +45,7 @@
 
                     }
                 }
-                echo  "Livro cadastrado com sucesso!";
+                $message = "Livro cadastrado com sucesso.";
             }else {
                 $message = mysqli_error($con_bd);
                 $message = "Erro cadastrando livro: " . mysqli_error($con_bd);
@@ -55,8 +55,9 @@
          $message = "Para fazer o cadastro é necessário preencher os campos";
     }
 
-$_SESSION['status'] = $status;
-$_SESSION['message'] = $message;
-header("Location: ../../form-cadastro-livros.php?entidade=livro&view=cadastro");
+    $_SESSION['status'] = $status;
+    $_SESSION['message'] = $message;
+    header("Location: ../../form-cadastro-livros.php?.");
+    exit();
 
 ?>  

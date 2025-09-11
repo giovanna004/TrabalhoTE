@@ -69,6 +69,6 @@
     $_SESSION['message'] = $message;
 
     header("Location: ../../form-atualiza-livro.php?id=".$id_livro);
-    exit;
+    exit();
 
 ?>

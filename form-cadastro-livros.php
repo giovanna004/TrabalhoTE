@@ -1,5 +1,14 @@
 <?php
     session_start();
+    
+    if (isset($_SESSION['message'])) {
+        echo "<div class='alert {$_SESSION['status']}'>
+                {$_SESSION['message']}
+            </div>";
+        unset($_SESSION['message']);
+        unset($_SESSION['status']);
+    }
+
     require_once('./conf/con_bd.php')
 ?>
 

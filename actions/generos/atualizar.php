@@ -1,7 +1,6 @@
 <?php
     session_start();
 
-  
     $nome = $_POST["nome-genero"] ?? "";
     $descricao = $_POST["descricao"]  ?? "";
     $genero_id = isset($_POST["id"]) ? intval($_POST['id']) : "NULL";
@@ -24,7 +23,7 @@
              $result = mysqli_query($con_bd, $sql_atualiza);
              if($result ===true){
                 $status = "success";
-                $message = "genero atualizado com sucesso!!!";
+                $message = "Gênero atualizado com sucesso.";
             } else {
                 $message = "Para fazer o cadastro é necessário preencher os campos";
             }
@@ -32,13 +31,13 @@
             $message = "Erro de conexão com o banco.";
          }
     }else{
-        $message = "genero não encontrado.";
+        $message = "Gênero não encontrado.";
     }
     
     $_SESSION['status'] = $status;
     $_SESSION['message'] = $message;
 
-    header("Location: ../../listar-generos.php?entidade=livro&view=atualizacao");
-    exit;
+    header("Location: ../../form-generos.php?id=".$genero_id);
+    exit();
 
 ?>

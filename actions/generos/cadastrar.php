@@ -20,18 +20,19 @@
 
             if($result === true){
                 $status = "success";
-                echo  "Gênero cadastrado com sucesso!";
+                $message = "Gênero cadastrado com sucesso.";
             }else {
                 $message = mysqli_error($con_bd);
-                $message = "Erro cadastrando genero: " . mysqli_error($con_bd);
+                $message = "Erro cadastrando gênero: " . mysqli_error($con_bd);
             }
         } 
     } else{
          $message = "Para fazer o cadastro é necessário preencher os campos";
     }
 
-$_SESSION['status'] = $status;
-$_SESSION['message'] = $message;
-header("Location: ../../listar-generos.php?entidade=livro&view=cadastro");
+    $_SESSION['status'] = $status;
+    $_SESSION['message'] = $message;
+    header("Location: ../../form-generos.php");
+    exit();
 
 ?>  

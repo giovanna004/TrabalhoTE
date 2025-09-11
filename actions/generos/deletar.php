@@ -14,11 +14,11 @@
              $result = mysqli_query($con_bd, $sql_delete);
 
              if($result ===true){
-                $message = "Gênero deletado com sucesso!";
+                $message = "Gênero deletado com sucesso.";
                 $status = "success";
              } else {
                 $error = mysqli_error($con_bd);
-                $message = "Gênero não foi deletado " . $error;
+                $message = "O gênero não foi deletado." . $error;
             }
          }
 
@@ -26,9 +26,10 @@
         $message = "Gênero não encontrado.";
     }
     
-$_SESSION['status'] = $status;
-$_SESSION['message'] = $message;
+    $_SESSION['status'] = $status;
+    $_SESSION['message'] = $message;
 
-header("Location: ../../listar-generos.php");
+    header("Location: ../../listar-generos.php");
+    exit();
 
 ?>

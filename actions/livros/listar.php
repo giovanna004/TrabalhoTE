@@ -59,8 +59,9 @@
         $message = "ID do livro não fornecido.";
     }
     
-$_SESSION['status'] = $status;
-$_SESSION['message'] = $message;
+    $_SESSION['status'] = $status;
+    $_SESSION['message'] = $message;
 
-header("Location: ../../form-atualiza-livro.php?id=".$id_livro);
+    header("Location: ../../form-atualiza-livro.php?id=".$id_livro);
+    exit();
 ?>
