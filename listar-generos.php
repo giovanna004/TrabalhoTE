@@ -39,9 +39,9 @@
 
         <div class="corpo">
             <div class="estante">
-                <div class="livro">
+                <div class="genero">
                     <a href="form-cadastro-livros.php">
-                        <img class="adiciona" src="imagens/adicionar.png" alt="adicionar">
+                        <img class="adicionar" src="imagens/adicionar.png" alt="adicionar">
                     </a>
                 </div>
 
@@ -56,9 +56,9 @@
                         if($result && $result -> num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
                                 echo '<div class="genero">';
-                                    echo '<p>' . htmlspecialchars($row['nome']) . '</p>';
+                                    echo '<p class="nome">' . htmlspecialchars($row['nome']) . '</p>';
                                     echo '<a href="listar-livros.php?id='.$row['id'].'" class="acao visualizar">
-                                        <p>' . htmlspecialchars($row['descricao']) . '</p>
+                                        <p class="descricao">' . htmlspecialchars($row['descricao']) . '</p>
                                     </a>';
                                     echo '<form action="actions/generos/deletar.php" method="POST">
                                         <button type="submit" name="exclui_genero" value="'.$row['id'].'" class="acao excluir" onclick="return confirm(\'Tem certeza que deseja excluir este gênero?\');">
@@ -77,7 +77,6 @@
                 ?>
                 
             </div>
-            <br><br><br><br><br><br>
 
         </div>
     </main>

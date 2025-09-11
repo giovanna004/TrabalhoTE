@@ -40,7 +40,7 @@
             <div class="estante">
                 <div class="livro">
                     <a href="form-cadastro-livros.php">
-                        <img class="adiciona" src="imagens/adicionar.png" alt="adicionar">
+                        <img class="adicionar" src="imagens/adicionar.png" alt="adicionar">
                     </a>
                 </div>
 
@@ -76,7 +76,6 @@
                 ?>
                 
             </div>
-            <br><br><br><br><br><br>
 
         </div>
     </main>
