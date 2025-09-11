@@ -1,0 +1,46 @@
+Sistema projetado por:  Emilly Rodrigues e Giovanna Queiroz
+Avaliação Prática 1 da disciplina de tópicos especiais em desenvolvimento de sistemas I
+
+Objetivo do sistema
+O sistema tem como objetivo simular uma biblioteca pessoal de livros que estão sendo lidos, sendo útil para a organização e para manter o usuário atualizado em relação à sua leitura.
+
+Funcionalidades implementadas:
+Adicionar livros (Capa, título, autor ,pagina, gênero).
+Editar livro.
+Excluir livro.
+Listar livro.
+Adicionar genero ( genero,descrição).
+Excluir gênero;
+Editar gênero;
+Listar gênero;
+
+Estrutura das tabelas
+CREATE TABLE tb_generos (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(120) NOT NULL,
+    descricao TEXT
+);
+
+CREATE TABLE tb_livros(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    genero_id INT UNSIGNED,
+    capa VARCHAR(255),
+    titulo VARCHAR(100) NOT NULL,
+    autor VARCHAR(100) NOT NULL,
+    paginas INT NOT NULL DEFAULT 0,
+    CONSTRAINT fk_livro_genero 
+        FOREIGN KEY (genero_id) REFERENCES tb_generos(id)
+        ON UPDATE CASCADE ON DELETE SET NULL
+);
+
+
+Fontes utilizadas:
+Vídeos da plataforma acadêmica da disciplina de tópicos especiais em desenvolvimento de sistemas I;
+Vídeos do youtube:
+CANAL TI. CRUD com PHP, MySQL & Bootstrap 5 (Create, Read, Update, Delete) | Tutorial PHP. Disponível em: <https://www.youtube.com/watch?v=aIQXgNmx_ug>.
+
+Uso de IA generativa:
+Foi utilizado para verificar os códigos quando havia erro, por exemplo, quando as mensagens não estavam sendo exibidas na tela e quando algum elemento não correspondia às edições feitas;
+Foi tirado print do erro ou colado o trecho do código para perguntar o que está errado ou o que falta para dar certo.
+Perguntamos sobre a formatação de tags e funcionalidade delas.
+
