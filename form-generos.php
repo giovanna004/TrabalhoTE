@@ -47,12 +47,10 @@
 
                     if (mysqli_num_rows($result) > 0) {
                         $dados_generos = mysqli_fetch_assoc($result);
-                        $action = "actions/generos/atualizar.php"; 
+                        $action = "actions/generos/atualizar.php?id=$genero_id"; 
                     }
                 }
             ?>
-
-
 
             <form class="editar-genero" enctype="multipart/form-data" action="<?=$action?>" method="post">
                 <fieldset>
@@ -79,8 +77,7 @@
 
     <footer class="rodape">
         <div class="conteudo-rodape">
-            <p>Trabalho</p>
-            <p>Tópicos especiais e Desenvolvimento de Sistemas I</p>
+            <p>Trabalho de Tópicos especiais e Desenvolvimento de Sistemas I</p>
             <p>Realizado por Giovanna Salvador e Emilly Rodrigues</p>
             <p>&copy; 2024 BookStan. Todos os direitos reservados.</p>
         </div>

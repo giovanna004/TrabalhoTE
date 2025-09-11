@@ -1,9 +1,8 @@
 <?php
     session_start();
 
-    $genero = $_POST["nome"] ?? "";
+    $genero = $_POST["nome-genero"] ?? "";
     $descricao = $_POST["descricao"] ?? "";
-    $genero_id = isset($_POST["genero"]) ? intval($_POST['genero']) : "NULL";
 
     $status = "error";
    
@@ -15,14 +14,13 @@
 
             $genero = mysqli_real_escape_string($con_bd, $genero);
             $descricao = mysqli_real_escape_string($con_bd, $descricao);
-            $generoVal = $genero_id ? $genero_id : "NULL";
 
-            $sql_insert = "INSERT INTO tb_genero(nome, descricao) VALUES ('$nome','$descricao');";
+            $sql_insert = "INSERT INTO tb_generos(nome, descricao) VALUES ('$genero','$descricao');";
             $result = mysqli_query($con_bd, $sql_insert);
 
             if($result === true){
                 $status = "success";
-                echo  "genero cadastrado com sucesso!";
+                echo  "Gênero cadastrado com sucesso!";
             }else {
                 $message = mysqli_error($con_bd);
                 $message = "Erro cadastrando genero: " . mysqli_error($con_bd);
@@ -34,6 +32,6 @@
 
 $_SESSION['status'] = $status;
 $_SESSION['message'] = $message;
-header("Location: ../../form-cadastro-livros.php?entidade=livro&view=cadastro");
+header("Location: ../../listar-generos.php?entidade=livro&view=cadastro");
 
 ?>  

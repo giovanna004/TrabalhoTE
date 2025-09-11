@@ -2,12 +2,12 @@
     session_start();
 
   
-    $nome = $_POST["nome"] ?? "";
+    $nome = $_POST["nome-genero"] ?? "";
     $descricao = $_POST["descricao"]  ?? "";
-    $genero_id = isset($_POST["genero"]) ? intval($_POST['genero']) : "NULL";
+    $genero_id = isset($_POST["id"]) ? intval($_POST['id']) : "NULL";
 
     $status = "error";
-    if (!empty($genero_id)) {
+    if ($genero_id > 0) {
         require_once("../../conf/con_bd.php");
 
          if ($con_bd !== false) {
@@ -38,7 +38,7 @@
     $_SESSION['status'] = $status;
     $_SESSION['message'] = $message;
 
-    header("Location: ../../form-atualiza-livro.php?id=".$genero_id);
+    header("Location: ../../listar-generos.php?entidade=livro&view=atualizacao");
     exit;
 
 ?>
