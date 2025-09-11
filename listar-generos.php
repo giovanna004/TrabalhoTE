@@ -40,7 +40,7 @@
         <div class="corpo">
             <div class="estante">
                 <div class="livro">
-                    <a href="form-cadastro-livros.php">
+                    <a href="form-generos.php?id=null">
                         <img class="adiciona" src="imagens/adicionar.png" alt="adicionar">
                     </a>
                 </div>
@@ -55,9 +55,9 @@
 
                         if($result && $result -> num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                echo '<div class="genero">';
+                                echo '<div  class="genero">';
                                     echo '<p>' . htmlspecialchars($row['nome']) . '</p>';
-                                    echo '<a href="listar-livros.php?id='.$row['id'].'" class="acao visualizar">
+                                    echo '<a href="form-generos.php?id='.$row['id'].'" class="acao visualizar">
                                         <p>' . htmlspecialchars($row['descricao']) . '</p>
                                     </a>';
                                     echo '<form action="actions/generos/deletar.php" method="POST">
@@ -65,7 +65,7 @@
                                                 <img src="imagens/excluir.png" alt="excluir">
                                         </button>
                                      </form>';
-                                    echo '<a href="form-atualiza-genero.php?id='.$row['id'].'" class="acao editar">Editar</a>';
+                                    echo '<a href="form-generos.php?id='.$row['id'].'" class="acao editar">Editar</a>';
                                 echo '</div>';
                             }
                         }
