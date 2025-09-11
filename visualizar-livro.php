@@ -67,6 +67,11 @@
                     
                     <label for="lista-genero">Gênero:</label>
                     <input  id="lista-genero" value="<?=$dados_livros['genero_nome']?>" name="genero" readonly/>
+
+                    <div class="acoes">
+                        <button type="submit" name="exclui_livro" value="<?= $dados_livros['id'] ?>" class="acao excluir" onclick="return confirm('Tem certeza que deseja excluir este livro?')">Excluir</button>
+                        <a href="form-atualiza-livro.php?id=<?= $dados_livros['id'] ?>" class="acao editar">Editar</a>
+                    </div>
                            
                 </fieldset>
             </form>

@@ -11,6 +11,7 @@ html, body {
 
 :root {
     --bg: #f1f2f3;
+    --blu: #2e9fe1;
     --text: #1e1f23;
     --muted: #6b7280;
     --surface: #ffffff;
@@ -333,6 +334,37 @@ form.editar-imagem img {
     margin: 0 auto 30px auto;
     max-width: 200px;
     border-radius: 8px;
+}
+
+form.visualizar-livro div.acoes {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+form.visualizar-livro button.acao.excluir,
+form.visualizar-livro a.acao.editar {
+    font-size: 15px;
+    color: var(--surface);
+    text-decoration: none;
+    border-radius: 5px;
+    border: var(--border);
+    background-color: var(--blu);
+    box-shadow: 0 0 0 3px rgba(46, 159, 225, 0.2);
+    width: 100px;         
+    height: 35px;         
+    line-height: 35px;    
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 10px;
+    padding: 0;           
+}
+
+form.visualizar-livro button.acao.excluir {
+    line-height: normal; 
 }
 
 legend {
