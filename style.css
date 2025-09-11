@@ -106,7 +106,6 @@ footer.rodape{
     text-align: center;
 }
 
-/*estante de livros*/
 
 .estante {
     display: grid;
@@ -119,7 +118,9 @@ footer.rodape{
 }
 
 
-.livro{
+/*estante de livros*/
+
+.livro, .genero{
     position: relative;
     background-color: #fff;
     border: 2px solid #ddd;
@@ -132,11 +133,11 @@ footer.rodape{
     
 }
 
-.livro:hover {
+.livro:hover, .genero:hover {
     transform: scale(1.05);
 }
 
-.livro img {
+.livro img, .genero img {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
@@ -149,20 +150,20 @@ footer.rodape{
     color: #333;
 }
 
-.livro button {
+.livro button, .genero button {
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.livro form{
+.livro form, .genero form {
     position: absolute;
     margin: 0;
     top: -30px;
     right: 3.5px;
 }
 
-.livro .acao.excluir {
+.livro .acao.excluir, .genero .acao.excluir {
     height: 40px;
     width: 40px;
     position: absolute;
@@ -172,7 +173,7 @@ footer.rodape{
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.livro .acao.editar {
+.livro .acao.editar, .genero .acao.editar {
     position: absolute;
     bottom: -30px;
     color: #c3c3c3;
@@ -186,7 +187,7 @@ footer.rodape{
     transform: translateX(-50%);
 }
 
-.livro:hover .acao {
+.livro:hover .acao, .genero:hover .acao {
     opacity: 1;
     transform: translateX(-5px);
 }
@@ -202,6 +203,17 @@ footer.rodape{
     opacity: 0.5;
     transform: translateX(-5px);
 }
+
+/*estante de generos*/
+
+.genero p {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
 
 /* formulario cadastro */
 

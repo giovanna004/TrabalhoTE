@@ -8,9 +8,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Dados do Livro</title>
     <meta name="description" content="BookStan - Editar livros">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="website icon" type="png" href="imagens/icon.png">
 </head>
 <body>
     <header class="cabecalho">
@@ -25,7 +26,7 @@
             <ul>
                 <li><a href="home.php">Página Inicial</a></li>
                 <li><a href="form-cadastro-livros.php">Novo Livro</a></li>
-                <li><a>Leituras Atuais</a></li>
+                <li><a href="listar-generos.php">Gêneros Literários</a></li>
                 <li><a>Leituras Desejadas</a></li>
                 <li><a>Avaliações</a></li>
             </ul>

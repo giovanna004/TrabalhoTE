@@ -15,6 +15,7 @@
     <meta name="description" content="BookStan - Cadastro e Avaliações de Leitura">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="website icon" type="png" href="imagens/icon.png">
+    <link rel="website icon" type="png" href="imagens/icon.png">
 </head>
 <body>
     <header class="cabecalho">
