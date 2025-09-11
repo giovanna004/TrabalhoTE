@@ -1,42 +1,34 @@
 <?php
- session_start();
+    session_start();
 
-function deletalivro($id_livro){
-        $status = "error";
-        $message = "";
+    $id_livro = (int) $_POST['exclui_livro'];
 
-        if (!empty($id_livro)) {
-            require_once("../../conf/con_bd.php");
+    $status = "error";
 
-            if ($con_bd !== false) {
-                
-                $sql_delete = "DELETE FROM tb_livros WHERE id=".intval($id_livro);
-                $result = mysqli_query($con_bd, $sql_delete);
+    if (!empty($id_livro)) {
+        require_once("../../conf/con_bd.php");
 
-                if($result ===true){
-                    $message = "Livro deletado com sucesso!";
-                    $status = "success";
-                } else {
-                    $error = mysqli_error($con_bd);
-                    $message = "Livro não foi deletado " . $error;
-                }
-            }else{
-                $message = "Erro de conexão com o banco.";
+         if ($con_bd !== false) {
+
+             $sql_delete = "DELETE FROM tb_livros WHERE id=".$id_livro;
+             $result = mysqli_query($con_bd, $sql_delete);
+
+             if($result ===true){
+                $message = "Livro deletado com sucesso!";
+                $status = "success";
+             } else {
+                $error = mysqli_error($con_bd);
+                $message = "Livro não foi deletado " . $error;
             }
-        }else{
-            $message = "Livro não encontrado.";
-        }
-        
-    $_SESSION['status'] = $status;
-    $_SESSION['message'] = $message;
+         }
 
-    header("Location: ../../home.php");
-    exit;
-}
+    }else{
+        $message = "Livro não encontrado.";
+    }
+    
+$_SESSION['status'] = $status;
+$_SESSION['message'] = $message;
 
-if(isset($_POST['exclui_livro'])){
-    $id = (int) $_POST['exclui_livro'];
-    deletalivro($id); 
-}
+header("Location: ../../home.php");
 
 ?>
